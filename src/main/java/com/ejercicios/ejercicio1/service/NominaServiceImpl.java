@@ -2,11 +2,11 @@ package com.ejercicios.ejercicio1.service;
 
 import java.util.List;
 
-import com.ejercicios.ejercicio1.modelo.Nomina;
+import com.ejercicios.ejercicio1.modelo.INominaService;
 import com.ejercicios.ejercicio1.modelo.Profesor;
 import com.ejercicios.ejercicio1.modelo.Titulo;
 
-public class NominaService implements Nomina {
+public class NominaServiceImpl implements INominaService {
 
     // declarando constantes de la nomina
     private final Double IMP_ESTAMPILLA = 0.02;

@@ -5,13 +5,13 @@ import java.util.List;
 
 import com.ejercicios.ejercicio1.modelo.Profesor;
 import com.ejercicios.ejercicio1.modelo.Titulo;
-import com.ejercicios.ejercicio1.service.NominaService;
+import com.ejercicios.ejercicio1.service.NominaServiceImpl;
 
 public class EjemploNomina {
 
     public static void main(String[] args) {
 
-        NominaService service = new NominaService();
+        NominaServiceImpl service = new NominaServiceImpl();
         
         Profesor leonard = new Profesor("Leonard", "Hernandez", Titulo.MAESTRIA);
         leonard.addHorasTrabajadas(40.0);
