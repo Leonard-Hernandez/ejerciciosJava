@@ -9,8 +9,8 @@ import com.ejercicios.ejercicio1.modelo.Titulo;
 public class NominaService implements Nomina {
 
     // declarando constantes de la nomina
-    private final Double IMP_ESTAMPILLA = 0.2;
-    private final Double IMP_SEGURIDAD_SOCIAL = 0.38;
+    private final Double IMP_ESTAMPILLA = 0.02;
+    private final Double IMP_SEGURIDAD_SOCIAL = 0.038;
     private final Double SALARIO_MAESTRIA = 67000.0;
     private final Double SALARIO_DOCTORADO = 92000.0;
     // declarando las variables acumulativas
@@ -28,24 +28,35 @@ public class NominaService implements Nomina {
 
         for (Profesor profesor : profesores) {
 
-            sb.append("Nomina del Profesor: " + profesor + "\n");
+            sb.append("\nNomina del Profesor: " + profesor + "\n");
 
-            nomina = (profesor.getTitulo() == Titulo.DOCTORADO) ? (SALARIO_DOCTORADO * profesor.getHorasTrabajadas())
-                    : (SALARIO_MAESTRIA * profesor.getHorasTrabajadas());
+            System.out.println(profesor.getTitulo() == Titulo.MAESTRIA);
+
+            if (profesor.getTitulo() == Titulo.MAESTRIA) {
+                nomina = SALARIO_MAESTRIA*profesor.getHorasTrabajadas();
+                totalHorasMaestria += profesor.getHorasTrabajadas();
+            }else if(profesor.getTitulo() == Titulo.DOCTORADO) {
+                nomina = SALARIO_DOCTORADO*profesor.getHorasTrabajadas();
+                totalHorasDoctorado += profesor.getHorasTrabajadas();
+            }else{
+                throw new RuntimeException("Profesor no valido");
+            }
 
             sb.append("Nomina antes de Impuesto: " + nomina + "\n");
 
             seguridadSocial = nomina * IMP_SEGURIDAD_SOCIAL;
+            totalSeguridadSocial += seguridadSocial;
 
             sb.append("Impuesto seguridad " + seguridadSocial + "\n");
 
             estampilla = nomina * IMP_ESTAMPILLA;
 
-            sb.append("Impuesto estampilla" + estampilla);
+            sb.append("Impuesto estampilla " + estampilla+ "\n");
 
             nomina = nomina - (seguridadSocial + estampilla);
+            totalNomina+=nomina;
 
-            sb.append("Nomina a pagar:" + nomina);
+            sb.append("Nomina a despues de impuestos:" + nomina+ "\n");
 
         }
 
@@ -54,8 +65,10 @@ public class NominaService implements Nomina {
 
     @Override
     public String getTotales() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getTotales'");
+        return "Total Horas trabajadas Maestria "+ totalHorasMaestria + "\n" +
+        "Total Horas Trabajadas Doctorado " + totalHorasDoctorado + "\n" +
+        "Total dinero pagado a Seguridad Social "+ totalSeguridadSocial + "\n" +
+        "Total pagado por nomina " + totalNomina;
     }
 
 }

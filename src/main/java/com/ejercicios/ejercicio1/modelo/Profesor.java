@@ -3,13 +3,11 @@ package com.ejercicios.ejercicio1.modelo;
 public class Profesor extends Persona {
 
     private Titulo titulo;
-    private Double horasTrabajadas;
+    private Double horasTrabajadas = 0.0;
 
-    public Profesor(String nombre, String apellido, Titulo titulo, Double horasTrabajadas) {
+    public Profesor(String nombre, String apellido, Titulo titulo) {
         super(nombre, apellido);
         this.titulo = titulo;
-        this.horasTrabajadas = horasTrabajadas;
-
     }
 
     public Titulo getTitulo() {
@@ -24,8 +22,8 @@ public class Profesor extends Persona {
         return horasTrabajadas;
     }
 
-    public void setHorasTrabajadas(Double horasTrabajadas) {
-        this.horasTrabajadas = horasTrabajadas;
+    public void addHorasTrabajadas(Double horasTrabajadas) {
+        this.horasTrabajadas += horasTrabajadas;
     }
 
 }
