@@ -3,6 +3,7 @@ package com.ejercicios.ejercicio1;
 import java.util.Arrays;
 import java.util.List;
 
+import com.ejercicios.ejercicio1.modelo.INominaService;
 import com.ejercicios.ejercicio1.modelo.Profesor;
 import com.ejercicios.ejercicio1.modelo.Titulo;
 import com.ejercicios.ejercicio1.service.NominaServiceImpl;
@@ -11,7 +12,7 @@ public class EjemploNomina {
 
     public static void main(String[] args) {
 
-        NominaServiceImpl service = new NominaServiceImpl();
+        INominaService service = new NominaServiceImpl();
         
         Profesor leonard = new Profesor("Leonard", "Hernandez", Titulo.MAESTRIA);
         leonard.addHorasTrabajadas(40.0);
