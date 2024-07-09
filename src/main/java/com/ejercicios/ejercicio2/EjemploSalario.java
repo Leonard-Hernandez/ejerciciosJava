@@ -12,8 +12,8 @@ public class EjemploSalario {
         
         NominaServiceImpl service = new NominaServiceImpl();
 
-        Trabajador lubraska = new Trabajador("6375721", "Lubraska Ferreira", service.SMMLV*4);
-        Trabajador leonard = new Trabajador("1034316504", "Leonard Hernandez", service.SMMLV);
+        Trabajador lubraska = new Trabajador("6375721", "Lubraska Ferreira", NominaServiceImpl.SMMLV*4);
+        Trabajador leonard = new Trabajador("1034316504", "Leonard Hernandez", NominaServiceImpl.SMMLV);
 
         List<Trabajador> trabajadores = Arrays.asList(lubraska, leonard);
 
