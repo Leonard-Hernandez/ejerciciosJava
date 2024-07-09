@@ -47,7 +47,7 @@ public class Jugador {
     }
 
     public void setRadioDisparos(List<Double> radioDisparos) {
-        if (radioDisparos.size() >=MAX_DISPAROS) {
+        if (radioDisparos.size() >MAX_DISPAROS) {
             throw new RuntimeException("No puede haber mas de doce disparos");
         }
         this.radioDisparos = radioDisparos;
