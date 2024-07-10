@@ -21,6 +21,9 @@ public class EjemploPuntaje {
         Jugador leonard = new Jugador("Leonard", "hernandez");
         leonard.setRadioDisparos(Arrays.asList(10d,10d,10d,10d,10d,10d,31d,31d,31d,31d,31d,31d));
 
+        Jugador jose = new Jugador("Jose", "Jose", Arrays.asList(10d,10d,10d,10d,10d,10d,31d,31d,31d,31d,31d,31d));
+
+
         System.out.println(service.getPuntajes(lubraska));
         System.out.println(service.getPuntajes(leonard));
 
