@@ -26,7 +26,8 @@ public class EjemploNomina {
         System.out.println(service.getNomina(profesores));
         System.out.println(service.getTotales());
 
-
+        //primer comic desde el trabajo
+        
     }
 
 }
