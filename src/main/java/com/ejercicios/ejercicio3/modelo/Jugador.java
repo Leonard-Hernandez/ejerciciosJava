@@ -9,7 +9,6 @@ public class Jugador {
     private String apellido;
     private List<Double> radioDisparos;
     public final int MAX_DISPAROS = 12;
-    private int indice =0 ;
 
     public Jugador(){
         this.radioDisparos = new ArrayList<>();

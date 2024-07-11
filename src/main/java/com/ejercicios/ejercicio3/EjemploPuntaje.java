@@ -26,6 +26,7 @@ public class EjemploPuntaje {
 
         System.out.println(service.getPuntajes(lubraska));
         System.out.println(service.getPuntajes(leonard));
+        System.out.println(service.getPuntajes(jose));
 
 
 
