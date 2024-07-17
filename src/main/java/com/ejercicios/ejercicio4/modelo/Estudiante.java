@@ -1,5 +1,6 @@
 package com.ejercicios.ejercicio4.modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Estudiante {
@@ -10,11 +11,12 @@ public class Estudiante {
     private String apellido;
     private List<Double> notas;
 
-    public Estudiante(){
+    public Estudiante() {
+        notas = new ArrayList<>();
         this.codigo = ++index;
     }
 
-    public Estudiante(String nombre, String apellido){
+    public Estudiante(String nombre, String apellido) {
         this();
         this.nombre = nombre;
         this.apellido = apellido;
@@ -48,14 +50,21 @@ public class Estudiante {
         return notas;
     }
 
-    public void addNota (Double nota){
+    public Estudiante addNota(Double nota) {
         if (notas.size() > 4) {
             throw new RuntimeException("No se admiten mas notas");
         }
-        if (nota > 0.0 || nota > 5.0) {
+        if (nota < 0.0 || nota > 5.0) {
             throw new RuntimeException("Nota fuera de los parametros");
         }
         notas.add(nota);
+
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "codigo " + this.codigo + " " + this.nombre + " " + this.apellido;
     }
 
 }
