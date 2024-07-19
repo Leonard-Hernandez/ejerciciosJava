@@ -6,6 +6,6 @@ import com.ejercicios.ejercicio4.modelo.Estudiante;
 
 public interface INotasService {
 
-    public String getNotas(List<Estudiante> estudiantes);
+    public String getNotas(List<Estudiante> estudiantes, double notaObjetivo);
 
 }

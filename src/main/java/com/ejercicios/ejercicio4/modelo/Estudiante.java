@@ -51,7 +51,7 @@ public class Estudiante {
     }
 
     public Estudiante addNota(Double nota) {
-        if (notas.size() > 4) {
+        if (notas.size() >= 4) {
             throw new RuntimeException("No se admiten mas notas");
         }
         if (nota < 0.0 || nota > 5.0) {
