@@ -30,21 +30,34 @@ public class NotasServiceImpl implements INotasService {
 
                 sb.append(estudiante + "\n")
                         .append("Notas ponderadas \n")
-                        .append("Nota primer corte (" + PONDERACION_CORTE_1 * 100 + "%) = " + nota1 * PONDERACION_CORTE_1 + "\n")
-                        .append("Nota segundo corte (" + PONDERACION_CORTE_2 * 100 + "%) = " + nota2 * PONDERACION_CORTE_2 + "\n")
-                        .append("Nota tercer corte (" + PONDERACION_CORTE_3 * 100 + "%) = " + nota3 * PONDERACION_CORTE_3 + "\n")
-                        .append("Nota cuarto corte (" + PONDERACION_CORTE_4 * 100 + "%) = " + nota4 * PONDERACION_CORTE_4 + "\n")
-                        .append("Definitiva = " + (nota1 * PONDERACION_CORTE_1 + nota2 * PONDERACION_CORTE_2 + nota3 * PONDERACION_CORTE_3 + nota4 * PONDERACION_CORTE_4) + "\n")
+                        .append("Nota primer corte (" + PONDERACION_CORTE_1 * 100 + "%) = "
+                                + nota1 * PONDERACION_CORTE_1 + "\n")
+                        .append("Nota segundo corte (" + PONDERACION_CORTE_2 * 100 + "%) = "
+                                + nota2 * PONDERACION_CORTE_2 + "\n")
+                        .append("Nota tercer corte (" + PONDERACION_CORTE_3 * 100 + "%) = "
+                                + nota3 * PONDERACION_CORTE_3 + "\n")
+                        .append("Nota cuarto corte (" + PONDERACION_CORTE_4 * 100 + "%) = "
+                                + nota4 * PONDERACION_CORTE_4 + "\n")
+                        .append("Definitiva = " + (nota1 * PONDERACION_CORTE_1 + nota2 * PONDERACION_CORTE_2
+                                + nota3 * PONDERACION_CORTE_3 + nota4 * PONDERACION_CORTE_4) + "\n")
                         .append("\n");
 
             } else {
-                double notasAcumuladas = (nota1 * PONDERACION_CORTE_1 + nota2 * PONDERACION_CORTE_2 + nota3 * PONDERACION_CORTE_3);
+                double notasAcumuladas = (nota1 * PONDERACION_CORTE_1 + nota2 * PONDERACION_CORTE_2
+                        + nota3 * PONDERACION_CORTE_3);
                 double restante = (notaObjetivo - notasAcumuladas) / PONDERACION_CORTE_4;
 
                 sb.append(estudiante + "\n")
-                        .append("Nota de los tres primeros cortes ponderada: " + notasAcumuladas + "\n")
-                        .append("Nota necesaria en el cuarto corte para alcanzar la nota objetivo: " + restante + "\n")
-                        .append("\n");
+                        .append("Nota de los tres primeros cortes ponderada: " + notasAcumuladas + "\n");
+
+                if (restante > 5.0) {
+                    sb.append("Nota de los tres primeros cortes ponderada: " + notasAcumuladas + "\n")
+                            .append("La nota que necesitas para alcanzar la nota objetivo supera a la nota maxima del 4 corte");
+                } else {
+                    sb.append("Nota necesaria en el cuarto corte para alcanzar la nota objetivo: " + restante + "\n")
+                            .append("\n");
+                }
+
             }
         }
 
