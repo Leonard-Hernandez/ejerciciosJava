@@ -15,9 +15,13 @@ public class ejemploNotas {
         Estudiante lubraska = new Estudiante("Lubraska", "Escalante");
         lubraska.addNota(5.0).addNota(5.0).addNota(5.0).addNota(5.0);
         Estudiante leonard = new Estudiante("Leonard", "Hernandez");
-        leonard.addNota(5.0).addNota(4.0).addNota(4.0);
+        leonard.addNota(1.0).addNota(4.0).addNota(4.0);
+        Estudiante jose = new Estudiante();
+        jose.setNombre("jose");
+        jose.setApellido("Gutierres");
+        jose.addNota(5.0).addNota(5.0).addNota(3.0);
 
-        System.out.println(service.getNotas(Arrays.asList(lubraska, leonard), 4.0));
+        System.out.println(service.getNotas(Arrays.asList(lubraska, leonard, jose), 3.0));
 
     }
 
