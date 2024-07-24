@@ -13,6 +13,8 @@ public class NotasServiceImpl implements INotasService {
     @Override
     public String getNotas(List<Estudiante> estudiantes, double notaObjetivo) {
 
+        //Te amo mi lubis
+
         StringBuilder sb = new StringBuilder();
 
         for (Estudiante estudiante : estudiantes) {
