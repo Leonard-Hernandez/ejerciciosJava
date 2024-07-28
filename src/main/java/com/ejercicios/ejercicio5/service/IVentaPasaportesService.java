@@ -5,6 +5,6 @@ import com.ejercicios.ejercicio5.modelo.Persona;
 
 public interface IVentaPasaportesService {
 
-    public double getPrecio(Pasaportes pasaporte, int Cantidad, Persona persona);
+    public double getPrecio(Persona persona ,Pasaportes pasaporte, int Cantidad);
 
 }
