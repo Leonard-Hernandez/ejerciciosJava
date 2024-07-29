@@ -17,18 +17,18 @@ public class VentaPasaporteServiceImpl implements IVentaPasaportesService {
         StringBuilder sb = new StringBuilder();
 
         // hacemos la factura
-        sb.append("Factura\n")
-                .append(persona+"\n");
+        sb.append("Factura\n").append(persona)
+                .append("\n");
 
         if (cantidad <= 0) {
             throw new RuntimeException("Cantidad a comprar erronea");
         }
 
-    sb.append("Producto\tcantidad\ttotal\n");
+        sb.append("Producto\tcantidad\ttotal\n");
 
         totalPagar = (cantidad < 3) ? pasaporte.getPrecio() * cantidad : pasaporte.getPrecioDesc() * cantidad;
 
-        sb.append(pasaporte + "\t" + cantidad + "\t" + totalPagar);
+        sb.append(pasaporte).append("\t").append(cantidad).append("\t").append(totalPagar);
 
         // sacamos las estadisticas
         totalVenta += totalPagar;

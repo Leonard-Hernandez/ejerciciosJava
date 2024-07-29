@@ -8,7 +8,7 @@ import com.ejercicios.ejercicio5.service.contracts.IVentaPasaportesService;
 public class EjemploVentaPasaporte {
 
     public static void main(String[] args) {
-        
+
         IVentaPasaportesService service = new VentaPasaporteServiceImpl();
 
         Persona leonard = new Persona("Leonard", "Hernandez");
@@ -20,7 +20,6 @@ public class EjemploVentaPasaporte {
         System.out.println(factura);
 
         System.out.println(service.getEstadisticas());
-
 
     }
 
