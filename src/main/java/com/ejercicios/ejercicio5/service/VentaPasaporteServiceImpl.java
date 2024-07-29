@@ -18,13 +18,13 @@ public class VentaPasaporteServiceImpl implements IVentaPasaportesService {
 
         // hacemos la factura
         sb.append("Factura\n")
-                .append(persona);
+                .append(persona+"\n");
 
         if (cantidad <= 0) {
             throw new RuntimeException("Cantidad a comprar erronea");
         }
 
-        sb.append("Producto\tcantidad\ttotal");
+    sb.append("Producto\tcantidad\ttotal\n");
 
         totalPagar = (cantidad < 3) ? pasaporte.getPrecio() * cantidad : pasaporte.getPrecioDesc() * cantidad;
 
