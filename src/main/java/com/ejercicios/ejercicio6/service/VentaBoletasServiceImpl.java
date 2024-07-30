@@ -37,24 +37,17 @@ public class VentaBoletasServiceImpl implements IVentaBoletasService {
         StringBuilder sb = new StringBuilder();
         sb.append("Factura Boletas\n").append(persona + "\n");
 
-        try {
-
-            var prueba = precios.get(boleta.getPromotora().getNombre());
-            System.out.println(prueba);
-            
-        } catch (Exception e) {
-            System.out.println("Error");
-        }
-
-        //precio = precios.get(boleta.getPromotora().getNombre()).get(boleta.getFuncion());
+        precio = precios.get(boleta.getPromotora().getNombre()).get(boleta.getFuncion());
         total = precio * cantidad;
 
-        if (persona.getTargetaDescuento().getPromotora().equals(boleta.getPromotora())) {
-            descuento = total * 0.10;
+        if (persona.getTargetaDescuento() != null) {
+            if (persona.getTargetaDescuento().getPromotora().equals(boleta.getPromotora())) {
+                descuento = total * 0.10;
+            }
         }
 
-        sb.append("Funcion: " + boleta.getPelicula() + "Funcion " + boleta.getFuncion() + "\n")
-                .append("Precio unitario : " + precio + "cantidad: " + cantidad + "total: " + total + "\n");
+        sb.append("Funcion: " + boleta.getPelicula() + " Funcion " + boleta.getFuncion() + "\n")
+                .append("Precio unitario : " + precio + " cantidad: " + cantidad + " total: " + total + "\n");
         total -= descuento;
         sb.append("Descuento :" + descuento + "\n")
                 .append("Total: " + total + "\n");

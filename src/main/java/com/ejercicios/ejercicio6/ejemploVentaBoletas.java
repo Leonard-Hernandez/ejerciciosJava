@@ -20,14 +20,14 @@ public class ejemploVentaBoletas {
         Boleta boletaLubraska = new Boleta("Cuando lloran las rosas", Promotora.CineColombia, Funcion.Funcion3d);
 
         Persona leonard = new Persona("Leonard", "Hernandez");
-        leonard.setTargetaDescuento(new TargetaDescuento(Promotora.RoyalFilms));
         Boleta boletaLeonard = new Boleta("Chainsaw Man la Pelicula", Promotora.CineColombia, Funcion.Funcion35mm);
 
-        String factura = service.getFactura(leonard, boletaLeonard, 2);
+        String factura = service.getFactura(lubraska, boletaLubraska, 10);
         System.out.println(factura);
 
-        factura = service.getFactura(lubraska, boletaLubraska, 1);
+        factura = service.getFactura(leonard, boletaLeonard, 2);
         System.out.println(factura);
+
 
 
 
