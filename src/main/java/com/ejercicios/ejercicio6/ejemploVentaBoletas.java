@@ -27,10 +27,7 @@ public class ejemploVentaBoletas {
 
         factura = service.getFactura(leonard, boletaLeonard, 2);
         System.out.println(factura);
-
-
-
-
+        
     }
 
 }
