@@ -20,7 +20,7 @@ public class ejemploVentaBoletas {
         Boleta boletaLubraska = new Boleta("Cuando lloran las rosas", Promotora.CineColombia, Funcion.Funcion3d);
 
         Persona leonard = new Persona("Leonard", "Hernandez");
-        Boleta boletaLeonard = new Boleta("Chainsaw Man la Pelicula", Promotora.CineColombia, Funcion.Funcion35mm);
+        Boleta boletaLeonard = new Boleta("Chainsaw Man la Pelicula", Promotora.RoyalFilms, Funcion.Funcion35mm);
 
         String factura = service.getFactura(lubraska, boletaLubraska, 10);
         System.out.println(factura);
@@ -28,6 +28,8 @@ public class ejemploVentaBoletas {
         factura = service.getFactura(leonard, boletaLeonard, 2);
         System.out.println(factura);
         
+        System.out.println(service.getEstadisticas());
+
     }
 
 }

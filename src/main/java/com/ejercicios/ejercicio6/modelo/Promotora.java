@@ -3,7 +3,7 @@ package com.ejercicios.ejercicio6.modelo;
 public enum Promotora {
 
     CineColombia("Cine Colombia"),
-    RoyalFilms("Royal Film");
+    RoyalFilms("Royal Films");
 
     private String nombre;
 
