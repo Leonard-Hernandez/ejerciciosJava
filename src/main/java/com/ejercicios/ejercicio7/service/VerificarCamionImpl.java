@@ -21,7 +21,7 @@ public class VerificarCamionImpl implements IVerificarCamion {
                 continue;
             }
 
-            boolean capacidadCarga = (camion.getCantidadCarga() >= 6 || camion.getCantidadCarga() <= 8);
+            boolean capacidadCarga = (camion.getCantidadCarga() >= 6 && camion.getCantidadCarga() <= 8);
             boolean modeloCamion = (camion.getAñoModelo() >= 2010);
             boolean aireAcondicionado = camion.isAireAcondicionado();
 
